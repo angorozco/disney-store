@@ -1,0 +1,22 @@
+.card {
+    width: 250px;
+    height: 310px;
+    margin: 1.5rem 1rem;
+    text-decoration: none;
+}
+
+.card-img {
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 0.8rem;
+    color: #002f65;
+}
+
+.card-price {
+    font-size: 0.7rem;
+    color: rgb(201, 140, 28);
+}

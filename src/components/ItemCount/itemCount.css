@@ -1,0 +1,32 @@
+.itemCount {
+    color: #002f65;
+    width: 250px;
+}
+
+.itemCount-btn {
+    background-color: #002f65;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.itemCount-btn:active {
+    background-color: #021429;
+    transform: scale(0.95);
+}
+
+.counter button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    margin: 0.5rem;
+    color: #002f65;
+}
+
+.counter button:active {
+    transform: scale(0.95);
+}
