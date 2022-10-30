@@ -2,20 +2,21 @@ import React from 'react';
 import logo from '../../assets/logo.png';
 import './navBar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <nav>
-      <a href=""><img src={logo} alt="" className='logo'/></a>
+      <NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink>
       <ul>
-        <li><a href="">Home</a></li>
-        <li  className='sublist'><a href="">Productos</a>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li  className='sublist'><NavLink to='/products'>Productos</NavLink>
           <ul  className='sublist-elements'>
-              <li><a href="">Hombres</a></li>
-              <li><a href="">Mujeres</a></li>
+              <li><NavLink to='/products/hombre'>Hombres</NavLink></li>
+              <li><NavLink to='/products/mujer'>Mujeres</NavLink></li>
           </ul>
         </li>
-        <li><a href=""> <CartWidget /> </a></li>
+        <li><NavLink to='/cart'> <CartWidget /> </NavLink></li>
       </ul>
     </nav>
   )
