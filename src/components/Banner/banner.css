@@ -1,0 +1,13 @@
+.banner {
+    width: 100%;
+    height: 150px;
+    background-color: #002f65;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.banner-text {
+    line-height: 150px;
+    font-size: 2rem;
+    text-transform: capitalize;
+}

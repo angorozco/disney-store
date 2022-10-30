@@ -1,9 +1,10 @@
 import React from 'react';
-import ItemListContainer from '../../components/ItemListContainer/ItemListContainer'
+import ItemListContainer from '../../components/ItemListContainer/ItemListContainer';
+import './category.css';
 
 const Category = () => {
   return (
-    <div>Category
+    <div>
       <ItemListContainer />
     </div>
   )

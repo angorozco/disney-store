@@ -1,16 +1,14 @@
 import React, {useState, useEffect} from 'react';  
-import ItemCount from '../ItemCount/ItemCount';
 import { products } from '../../mock/products';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom'
+import Banner from '../Banner/Banner';
 
 const ItemListContainer = () => {
   const [productsList, setProductsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onAdd = (count) => {
-    console.log('cantidad: ', count);
-  }
+  
 
   const {gender} = useParams();
   console.log(gender)
@@ -38,8 +36,12 @@ const ItemListContainer = () => {
       
       {isLoading 
       ? '...cargando'
-      :<ItemList products={productsList}/>}
-      <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+      : <div>
+          <Banner text={gender? gender : 'productos'} />
+          <ItemList products={productsList}/>
+        </div>
+      }
+      
     </div>
   )
 }
