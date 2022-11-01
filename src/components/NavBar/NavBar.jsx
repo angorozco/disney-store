@@ -10,10 +10,11 @@ const NavBar = () => {
       <NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink>
       <ul>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li  className='sublist'><NavLink to='/products'>Productos</NavLink>
+        <li  className='sublist'><NavLink>Productos</NavLink>
           <ul  className='sublist-elements'>
               <li><NavLink to='/products/hombre'>Hombres</NavLink></li>
               <li><NavLink to='/products/mujer'>Mujeres</NavLink></li>
+              <li><NavLink to='/products'>Todos los productos</NavLink></li>
           </ul>
         </li>
         <li><NavLink to='/cart'> <CartWidget /> </NavLink></li>

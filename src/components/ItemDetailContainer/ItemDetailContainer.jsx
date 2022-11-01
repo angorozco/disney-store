@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const {id} = useParams();
-  console.log(id)
+ 
   useEffect(() => {
     setIsLoading(true);
     getItem(id).then((res) => setItem(res)).finally(() => setIsLoading(false));

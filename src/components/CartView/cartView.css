@@ -1,0 +1,35 @@
+.cartView {
+    margin-bottom: 2rem;
+    color: #002f65;
+}
+
+.cartView-img {
+    width: 120px;
+    height: 120px;
+}
+
+.cartView-info {
+    font-size: 0.7rem;
+}
+
+.cartView-trash {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #002f65;
+}
+
+@media screen and (min-width: 768px) {
+    .cartView {
+        display: flex;
+    }
+
+    .cartView-info {
+        text-align: start;
+        padding: 1rem;
+    }
+
+    .cartView-info h2 {
+        font-size: 0.7rem;
+    }
+}

@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   
 
   const {gender} = useParams();
-  console.log(gender)
+ 
 
   useEffect(() => {
     setIsLoading(true);
