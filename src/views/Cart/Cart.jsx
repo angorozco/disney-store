@@ -36,7 +36,7 @@ const Cart = () => {
                   <span> {totalPrice() * 0.21 + totalPrice()}</span>
                 </div>
                 <div className='cart-order-choice'>
-                  <button className='cart-order-btn'>Ingresar y finalizar compra</button>
+                  <Link to='/checkout' className='cart-order-btn'>Ingresar y finalizar compra</Link>
                   <Link to='/' className='cart-back'>seguir comprando</Link></div>
               </div>
             </div>

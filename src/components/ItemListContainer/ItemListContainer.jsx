@@ -3,6 +3,7 @@ import { products } from '../../mock/products';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom'
 import Banner from '../Banner/Banner';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
   const [productsList, setProductsList] = useState([]);
@@ -13,22 +14,24 @@ const ItemListContainer = () => {
   const {gender} = useParams();
  
 
+
   useEffect(() => {
     setIsLoading(true);
-    const productos = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 2000);
-    })
-    productos.then((res) => {
-      if (gender) {
-        setProductsList(res.filter((product) => product.gender === gender))
-      }else{
-        setProductsList(res);
-      }
-    }).finally(() => setIsLoading(false))
-  },[gender]);
-
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'products');
+    if (gender) {
+      
+      const queryFilter = query(queryCollection, where('gender', '==', gender));
+      getDocs(queryFilter).then((res) => setProductsList(res.docs.map((product)=> {
+        return {id: product.id, ...product.data()}
+      }))).finally(() => setIsLoading(false));
+    }else{
+  
+      getDocs(queryCollection).then((res) => setProductsList(res.docs.map((product)=> {
+        return {id: product.id, ...product.data()}
+      }))).finally(() => setIsLoading(false));
+    }
+  }, [gender])
  
 
   return (

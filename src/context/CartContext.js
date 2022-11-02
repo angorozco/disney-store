@@ -38,8 +38,6 @@ const CartProvider = ({ children }) => {
         );
     };
 
-    console.log(cart);
-
     return (
         <Provider
             value={{

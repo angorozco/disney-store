@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
-import { getItem } from '../../utils/getItem';
 import { useParams } from 'react-router-dom';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import ItemDetail from '../ItemDetail/ItemDetail';
 import Banner from '../Banner/Banner';
 
 const ItemDetailContainer = () => {
@@ -12,8 +12,11 @@ const ItemDetailContainer = () => {
  
   useEffect(() => {
     setIsLoading(true);
-    getItem(id).then((res) => setItem(res)).finally(() => setIsLoading(false));
-  },[id])
+    const querydb = getFirestore();
+    const queryDoc = doc(querydb, 'products', id);
+    getDoc(queryDoc).then(res => setItem({id: res.id, ...res.data()})).finally(() => setIsLoading(false));
+  },[id]);
+
   return (
     <div className='itemDetailContainer'>
       
